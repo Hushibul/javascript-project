@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <div class="logo">
+          <img src="img/images/logo.png" alt="logo" />
+        </div>
+        <button type="button">List Property</button>
+        <img src="img/images/menu.png" class="menu-icon" alt="menu icon" />
+      </nav>
+
+      <div class="row">
+        <div class="col-1">
+          <h1>Explore <br> Best Property</h1>
+          <p>
+            You Can Explore The Best Propery Near You Or Location You Want To
+            Get Your Property.
+          </p>
+          <button type="button">Explore The Property</button>
+          <ul>
+              <li class="btn active" id="btn-1"></li>
+              <li class="btn" id="btn-2"></li>
+              <li class="btn" id="btn-3"></li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <img src="img/images/pic1.png" alt="picture1" id="banner"/>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+
+        var btn = document.getElementsByClassName("btn");
+        var banner = document.getElementById("banner");
+        var btn1 = document.getElementById("btn-1");
+        var btn2 = document.getElementById("btn-2");
+        var btn3 = document.getElementById("btn-3");
+
+        console.log("butt",btn);
+        console.log(banner);
+
+        // btn[0].onclick() = function() {
+        //     banner.src = "img/images/pic1.png"
+        // }
+        // btn[1].onclick() = function() {
+        //     banner.src = "img/images/pic3.png"
+        // }
+        // btn[2].onclick() = function() {
+        //     banner.src = "img/images/pic3.png"
+        // }
+
+        function animation() {
+            banner.classList.add("zoom");
+            setTimeout(function(){banner.classList.remove("zoom")}, 500);
+
+            for(b of btn) {
+                b.classList.remove("active");
+            }
+        }
+
+        btn1.onclick = function() {
+            banner.src = "img/images/pic1.png";
+
+            animation();
+            this.classList.add("active");
+        }
+        btn2.onclick = function() {
+            banner.src = "img/images/pic2.png";
+
+           animation();
+           this.classList.add("active");
+
+        }
+        btn3.onclick = function() {
+            banner.src = "img/images/pic3.png";
+
+            animation();
+            this.classList.add("active");
+
+        }
+
+        
+
+    </script>
+  </body>
+</html>
